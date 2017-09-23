@@ -109,7 +109,7 @@ function endGame() {
   clearInterval(gameInterval);
   ROCKS.forEach(function(rock) { rock.remove() });
 
-  document.removeEventListener('keydown', moveDodger());
+  document.removeEventListener('keydown', moveDodger);
 
   return alert('YOU LOSE!')
 }
