@@ -106,7 +106,10 @@ GAME.appendChild(rock);
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-  gameInterval = null
+  gameInterval = null;
+  ROCKS.forEach(function(rock) { rock.remove() });
+  document.removeEventListener('keydown', moveDodger);
+  return alert('YOU LOSE!')
 }
 
 function moveDodger(e) {
