@@ -74,7 +74,7 @@ GAME.appendChild(rock);
       if(checkCollision(rock)) {
         endGame();
       } else if(top > GAME_HEIGHT) {
-        window.requestAnimationFrame(moveRock());
+        window.requestAnimationFrame(moveRock);
       } else {
         rock.remove();
       }
@@ -90,7 +90,7 @@ GAME.appendChild(rock);
   }
 
   // We should kick of the animation of the rock around here
-
+     window.requestAnimationFrame(moveRock)
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
   ROCKS.push(rock)
