@@ -56,13 +56,13 @@ function createRock(x) {
    * it to GAME and move it downwards.
    */
 game.appendChild("rock")
-  top = `${top += 2px}`
+      
   /**
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
    */
   function moveRock() {
-    
+      top = `${top += }px`;
 
     // implement me!
     // (use the comments below to guide you!)
@@ -70,7 +70,14 @@ game.appendChild("rock")
      * If a rock collides with the DODGER,
      * we should call endGame()
      */
-    
+     if(checkCollision(rock)) {
+       endGame()
+     } else if(top < GAME_HEIGHT) {
+       window.requestAnimationFrame(moveRock());
+     } else {
+       rock.remove;
+     }
+     
     /**
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
