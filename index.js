@@ -18,23 +18,15 @@ var gameInterval = null
  */
 
 function checkCollision(rock) {
-  // implement me!
-  // use the comments below to guide you!
   const top = positionToInteger(rock.style.top)
 
-  // rocks are 20px high
-  // DODGER is 20px high
-  // GAME_HEIGHT - 20 - 20 = 360px;
-  if (top > 360) {
+  if(top > 360) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left)
-
-    const dodgerRightEdge = dodgerLeftEdge + 40;
-
+    const dodgerRightEdge = dodgerLeftEdge = 40;
     const rockLeftEdge = positionToInteger(rock.style.left)
+    const rockRightEdge = rockLeftEdge = 20;
 
-
-    const rockRightEdge = rockLeftEdge + 20;
-    if (rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge || rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge ) {
+    if(rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge || rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge) {
       return true;
     }
   }
